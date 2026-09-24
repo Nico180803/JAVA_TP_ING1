@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("Langage favori ?");
                     String stack = sc.nextLine();
                     System.out.println("Salaire annuel ?");
-                    double salaire = getScannerInt();
+                    double salaire = getScannerDouble();
 
                     sc.nextLine();
 
