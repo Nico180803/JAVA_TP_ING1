@@ -1,17 +1,20 @@
+package fr.efrei.java;
+
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 
 public class Main {
-    // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        Programmeur alice = new Programmeur("Alice","Martin","JAVA",42000);
+        Programmeur alice = new Programmeur("Alice","Martin","JAVA",42000, new Adresse("12 rue des Lilas", "75000", "Paris", "France"));
         Programmeur alex = new Programmeur("Alex","Doe","JAVA",43000);
-        int choix;
 
+        Formateur formateur = alice;
+
+        int choix;
 
         boucle : while (true){
             System.out.println("""
@@ -22,6 +25,7 @@ public class Main {
                 1 - Afficher Alice
                 2 - Afficher Alex
                 3 - Ajouter un programmeur
+                4 - Augmenter salaire alice
                 0 - Quitter
                 """);
             choix = getScannerInt();
@@ -53,6 +57,12 @@ public class Main {
                     Programmeur prg = new Programmeur(prenom,nom,stack,salaire);
 
                     System.out.println(prg);
+                    break;
+                }
+                case 4:
+                {
+                    System.out.println("Pourcentage d'augmentation :");
+                    alice.augmentSalary(getScannerDouble());
                     break;
                 }
                 case 0:
