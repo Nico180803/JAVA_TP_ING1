@@ -4,13 +4,17 @@ import static fr.efrei.java.Main.sc;
 
 public class Programmeur extends Collaborateur {
 
+    private String preferedStack;
+
 
     public Programmeur(String prenom, String nom, String preferedStack, double salaire, Adresse adresse) {
-        super(prenom, nom, preferedStack, salaire, adresse);
+        super(prenom, nom, salaire, adresse);
+        this.preferedStack = preferedStack;
     }
 
     public Programmeur(String prenom, String nom, String preferedStack, double salaire) {
-        super(prenom, nom, preferedStack, salaire);
+        super(prenom, nom, salaire);
+        this.preferedStack = preferedStack;
     }
 
     public void augmentSalary(double pourcent){
