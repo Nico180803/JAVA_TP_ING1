@@ -16,7 +16,7 @@ public class Main {
 
         equipe.addCollaborateur(alex);
         equipe.addCollaborateur(alice);
-        
+
 
         boucle : while (true){
             getMenu();
@@ -35,6 +35,7 @@ public class Main {
                 case 3:
                     ajouterCollaborateur(equipe);
                     break;
+
                 case 4:
                 {
                     System.out.println("Pourcentage d'augmentation :");
@@ -54,9 +55,10 @@ public class Main {
                     System.out.println("Erreur : Veuillez saisir une option valide");
             }
         }
-
-
     }
+
+
+
 
     private static void ajouterCollaborateur(Equipe equipe) {
         System.out.println("Prénom ?");
