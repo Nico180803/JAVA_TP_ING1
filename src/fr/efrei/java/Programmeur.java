@@ -34,13 +34,6 @@ public class Programmeur extends Collaborateur {
         super.travailler("Le collaborateur programme");
     }
 
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public String getNom() {
-        return nom;
-    }
 
     public String getPreferedStack() {
         return preferedStack;
@@ -50,13 +43,6 @@ public class Programmeur extends Collaborateur {
         this.preferedStack = preferedStack;
     }
 
-    public double getSalaire() {
-        return salaire;
-    }
-
-    public void setSalaire(double salaire) {
-        this.salaire = salaire;
-    }
 
     @Override
     public String toString() {

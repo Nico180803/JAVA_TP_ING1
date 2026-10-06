@@ -9,28 +9,19 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Equipe equipe = new Equipe();
+
         Programmeur alice = new Programmeur("Alice","Martin","JAVA",42000, new Adresse("12 rue des Lilas", "75000", "Paris", "France"));
         Programmeur alex = new Programmeur("Alex","Doe","JAVA",43000);
 
-        Formateur formateur = alice;
-
-        int choix;
+        equipe.addCollaborateur(alex);
+        equipe.addCollaborateur(alice);
+        
 
         boucle : while (true){
-            System.out.println("""
-                ==============================
-                 Gestion des programmeurs
-                ==============================
-                
-                1 - Afficher Alice
-                2 - Afficher Alex
-                3 - Ajouter un programmeur
-                4 - Augmenter salaire alice
-                0 - Quitter
-                """);
-            choix = getScannerInt();
+            getMenu();
 
-            switch (choix){
+            switch (getScannerInt()){
                 case 1:
                 {
                     System.out.println(alice);
@@ -42,27 +33,17 @@ public class Main {
                     break;
                 }
                 case 3:
-                {
-                    System.out.println("Prénom ?");
-                    String prenom = sc.nextLine();
-                    System.out.println("Nom ?");
-                    String nom = sc.nextLine();
-                    System.out.println("Langage favori ?");
-                    String stack = sc.nextLine();
-                    System.out.println("Salaire annuel ?");
-                    double salaire = getScannerDouble();
-
-                    sc.nextLine();
-
-                    Programmeur prg = new Programmeur(prenom,nom,stack,salaire);
-
-                    System.out.println(prg);
+                    ajouterCollaborateur(equipe);
                     break;
-                }
                 case 4:
                 {
                     System.out.println("Pourcentage d'augmentation :");
                     alice.augmentSalary(getScannerDouble());
+                    break;
+                }
+                case 5:
+                {
+                    equipe.showAllCollaborateur();
                     break;
                 }
                 case 0:
@@ -77,10 +58,26 @@ public class Main {
 
     }
 
+    private static void ajouterCollaborateur(Equipe equipe) {
+        System.out.println("Prénom ?");
+        String prenom = sc.nextLine();
+        System.out.println("Nom ?");
+        String nom = sc.nextLine();
+        System.out.println("Langage favori ?");
+        String stack = sc.nextLine();
+        System.out.println("Salaire annuel ?");
+        double salaire = getScannerDouble();
+
+
+        equipe.addCollaborateur(new Programmeur(prenom,nom,stack,salaire));
+
+        System.out.println("Nouveau programmeur ajouté");
+    }
+
     public static double getScannerDouble(){
         while (!sc.hasNextDouble()){
             System.out.println("Erreur : veuillez entrer un nombre");
-            sc.next();
+            sc.nextLine();
         }
         double retour = sc.nextInt();
         sc.nextLine();
@@ -97,5 +94,20 @@ public class Main {
         sc.nextLine();
         return retour;
 
+    }
+
+    public static void getMenu(){
+        System.out.println("""
+                ==============================
+                 Gestion des programmeurs
+                ==============================
+                
+                1 - Afficher Alice
+                2 - Afficher Alex
+                3 - Ajouter un programmeur
+                4 - Augmenter salaire alice
+                5 - Afficher tout les collaborateurs
+                0 - Quitter
+                """);
     }
 }
