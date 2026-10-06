@@ -11,8 +11,8 @@ public class Main {
 
         Equipe equipe = new Equipe();
 
-        Programmeur alice = new Programmeur("Alice","Martin","JAVA",42000, new Adresse("12 rue des Lilas", "75000", "Paris", "France"));
-        Programmeur alex = new Programmeur("Alex","Doe","JAVA",43000);
+        Programmeur alice = new Programmeur("C001", "Alice","Martin","JAVA",42000, new Adresse("12 rue des Lilas", "75000", "Paris", "France"));
+        Programmeur alex = new Programmeur("C002","Alex","Doe","JAVA",43000);
 
         equipe.addCollaborateur(alex);
         equipe.addCollaborateur(alice);
@@ -61,6 +61,8 @@ public class Main {
 
 
     private static void ajouterCollaborateur(Equipe equipe) {
+        System.out.println("Id ?");
+        String id = sc.nextLine();
         System.out.println("Prénom ?");
         String prenom = sc.nextLine();
         System.out.println("Nom ?");
@@ -71,7 +73,7 @@ public class Main {
         double salaire = getScannerDouble();
 
 
-        equipe.addCollaborateur(new Programmeur(prenom,nom,stack,salaire));
+        equipe.addCollaborateur(new Programmeur(id, prenom, nom, stack, salaire));
 
         System.out.println("Nouveau programmeur ajouté");
     }

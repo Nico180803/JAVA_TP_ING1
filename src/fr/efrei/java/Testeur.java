@@ -2,12 +2,12 @@ package fr.efrei.java;
 
 public class Testeur extends Collaborateur{
 
-    public Testeur(String prenom, String nom, double salaire, Adresse adresse) {
-        super(prenom, nom, salaire, adresse);
+    public Testeur(String id,String prenom, String nom, double salaire, Adresse adresse) {
+        super(id,prenom, nom, salaire, adresse);
     }
 
-    public Testeur(String prenom, String nom,  double salaire) {
-        super(prenom, nom, salaire);
+    public Testeur(String id,String prenom, String nom,  double salaire) {
+        super(id,prenom, nom, salaire);
     }
 
 

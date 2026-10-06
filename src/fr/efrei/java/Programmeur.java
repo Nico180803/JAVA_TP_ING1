@@ -7,13 +7,13 @@ public class Programmeur extends Collaborateur {
     private String preferedStack;
 
 
-    public Programmeur(String prenom, String nom, String preferedStack, double salaire, Adresse adresse) {
-        super(prenom, nom, salaire, adresse);
+    public Programmeur(String id, String prenom, String nom, String preferedStack, double salaire, Adresse adresse) {
+        super(id, prenom, nom, salaire, adresse);
         this.preferedStack = preferedStack;
     }
 
-    public Programmeur(String prenom, String nom, String preferedStack, double salaire) {
-        super(prenom, nom, salaire);
+    public Programmeur(String id, String prenom, String nom, String preferedStack, double salaire) {
+        super(id,prenom, nom, salaire);
         this.preferedStack = preferedStack;
     }
 
