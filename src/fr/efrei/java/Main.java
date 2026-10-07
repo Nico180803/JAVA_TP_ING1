@@ -72,10 +72,12 @@ public class Main {
         System.out.println("Salaire annuel ?");
         double salaire = getScannerDouble();
 
-
-        equipe.addCollaborateur(new Programmeur(id, prenom, nom, stack, salaire));
-
-        System.out.println("Nouveau programmeur ajouté");
+        try {
+            equipe.addCollaborateur(new Programmeur(id, prenom, nom, stack, salaire));
+            System.out.println("Nouveau programmeur ajouté");
+        }catch (CollaborateurDejaExistantException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public static double getScannerDouble(){

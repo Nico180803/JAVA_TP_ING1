@@ -14,8 +14,14 @@ public class Equipe {
     }
 
 
-    public void addCollaborateur(Collaborateur collaborateur){
-        this.collaborateurs.add(collaborateur);
+    public void addCollaborateur(Collaborateur collaborateur) throws CollaborateurDejaExistantException{
+
+        boolean result = this.collaborateurs.add(collaborateur);
+
+        if (!result){
+            throw new CollaborateurDejaExistantException();
+        }
+
     }
 
     public void showAllCollaborateur(){
